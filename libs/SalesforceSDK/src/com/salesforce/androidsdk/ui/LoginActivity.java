@@ -296,7 +296,10 @@ public class LoginActivity extends AccountAuthenticatorActivity
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.sf__login, menu);
+        if (BuildConfig.BUILD_TYPE.equals("debug")) {
+            getMenuInflater().inflate(R.menu.sf__login, menu);
+        }
+
         return super.onCreateOptionsMenu(menu);
     }
 
